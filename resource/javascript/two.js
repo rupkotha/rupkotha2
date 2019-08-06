@@ -104,9 +104,27 @@ function update() {
     // });
 
     // newPage();
+    updateBookDetails();
     incompletedPage();
 }
 
+
+function updateBookDetails() {
+    totalProofedPages = 0;
+    for (i = 1; i <= proofedPages.length; i++)
+        if (proofedPages[i])
+            totalProofedPages += 1;
+
+    totalFormatedPages = totalProofedPages;
+    completed = (((totalProofedPages) / totalPages) * 100).toFixed(2);
+
+    document.getElementById("bookname-table").value = title;
+    document.getElementById("writer-table").value = writer;
+    document.getElementById("totalpages-table").value = totalPages;
+    document.getElementById("formatedpages-table").value = totalFormatedPages;
+    document.getElementById("proofedpages-table").value = totalProofedPages;
+    document.getElementById("completed-table").value = completed + '%';
+}
 
 function getBookDetails() {
     book = (10000 + bookID).toString();
@@ -118,23 +136,8 @@ function getBookDetails() {
         formatedPages = snapsot.val().format;
         proofedPages = snapsot.val().proof;
 
-        totalProofedPages = 0;
-        for (i = 1; i <= proofedPages.length; i++)
-            if (proofedPages[i])
-                totalProofedPages += 1;
-
-        totalFormatedPages = totalProofedPages;
-        completed = (((totalProofedPages) / totalPages) * 100).toFixed(2);
-
-        document.getElementById("bookname-table").value = title;
-        document.getElementById("page-table").value = page;
-        document.getElementById("writer-table").value = writer;
-        document.getElementById("totalpages-table").value = totalPages;
-        document.getElementById("formatedpages-table").value = totalFormatedPages;
-        document.getElementById("proofedpages-table").value = totalProofedPages;
-        document.getElementById("completed-table").value = completed + '%';
+        updateBookDetails();
     });
-
     getTaskedPageNumber();
 }
 
@@ -259,16 +262,16 @@ function registration() {
     password = document.getElementById("password").value;
 
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function (user) {
-        window.location.href = 'two.html'
+        window.location.href = 'index.html'
 
         //Here if you want you can sign in the user
     }).catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
-            alert(errorMessage)
-        });
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+        alert(errorMessage)
+    });
 }
 
 function isLogin() {
@@ -300,7 +303,7 @@ function login() {
     password = document.getElementById("password").value;
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then(function onSuccess(...args) {
-            window.location.href = 'two.html'
+            window.location.href = 'index.html'
         }).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
