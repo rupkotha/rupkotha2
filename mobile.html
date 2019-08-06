@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="resource/css/main.css">
+    <link rel="stylesheet" href="resource/css/mobile.css">
     <link rel="stylesheet" href="resource/css/bootstrap.css">
     <title>Editor</title>
 </head>
@@ -43,46 +43,45 @@
 
         <aside id="aside-right">
             <aside id="aside-right">
-
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control text-center alert-secondary">Book Details</b>
                 </div>
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control">Book ID :</b>
                     <input type="text" value="" class="form-control" id="bookid-table-right" placeholder="Book ID"
                         readonly>
                 </div>
 
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control">Book</b>
                     <input type="text" value="" class="form-control" id="bookname-table" placeholder="Book Name"
                         readonly>
                 </div>
 
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control">Writer</b>
                     <input type="text" value="" class="form-control" id="writer-table" placeholder="Writer" readonly>
                 </div>
 
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control">Total Pages</b>
                     <input type="text" value="" class="form-control" id="totalpages-table" placeholder="Total Pages"
                         readonly>
                 </div>
 
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control">Formated</b>
                     <input type="text" value="" class="form-control" id="formatedpages-table" placeholder="Formatted"
                         readonly>
                 </div>
 
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control">Proofed</b>
                     <input type="text" value="" class="form-control" id="proofedpages-table" placeholder="Proofed"
                         readonly>
                 </div>
 
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control">Completed</b>
                     <input type="text" value="" class="form-control" id="completed-table" placeholder="Completed"
                         readonly>
@@ -93,41 +92,41 @@
             <!-- Page Details -->
             <aside id="aside-left">
 
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control text-center alert-secondary">Page Details</b>
                 </div>
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control">Book ID :</b>
                     <input type="text" value="" class="form-control" id="bookid-table" placeholder="Book ID" readonly>
                 </div>
 
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control">Page</b>
                     <input type="text" value="" class="form-control" id="page-table" placeholder="Page" readonly>
                 </div>
 
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control">Version</b>
                     <input type="text" value="" class="form-control" id="version-table" placeholder="version" readonly>
                 </div>
 
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control">Proof</b>
                     <input type="text" value="" class="form-control" id="proof-table" placeholder="Proof" readonly>
                 </div>
 
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control">Format</b>
                     <input type="text" value="" class="form-control" id="format-table" placeholder="Format" readonly>
                 </div>
 
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control">Volunteer</b>
                     <input type="text" value="" class="form-control" id="volunteer-table" placeholder="Volunteer"
                         readonly>
                 </div>
 
-                <div class="input-group mb-3 col-sm-9">
+                <div class="input-group mb-3 container">
                     <b class="form-control">Image </b>
                     <a href="" class="form-control" id="page-image-table" target="_blank">Link</a>
                 </div>
@@ -145,7 +144,7 @@
             <input type="number" value="" class="form-control" placeholder="Book ID" id="go-bookid" readonly>
 
             <b class="form-control">Page</b>
-            <input type="tel" value="" class="form-control" placeholder="Page" id="go-page">
+            <input type="number" value="" class="form-control" placeholder="Page" id="go-page">
 
             <div class="input-group-append">
                 <button class="btn btn-primary" onclick="goPage()">GO</button>
@@ -164,20 +163,8 @@
 
 
     <main>
-        <table>
-            <tbody>
-                <tr>
-                    <td>
-                        <textarea name="text" id="textid" cols="50" rows="15" wrap="soft" spellcheck="on"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <iframe src="" id="imageid" alt="Page Image"></iframe>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <textarea name="text" id="textid" cols="50" rows="15" wrap="soft" spellcheck="on"></textarea>
+        <img src="" id="imageid" alt="Page Image"></img>
     </main>
 
 
