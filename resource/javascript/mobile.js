@@ -173,7 +173,6 @@ function getTaskedPageNumber() {
         else
             console.log("All Completed in this book. \nPlease change Book ID");
     }
-    console.log(taskPages)
 }
 
 
@@ -226,7 +225,7 @@ function newPage() {
 }
 
 function goPage() {
-    page = Number(document.getElementById("go-page").value)
+    page = document.getElementById("go-page").value;
     bookID = Number(document.getElementById("go-bookid").value) - 10000;
     newPage();
 }
@@ -336,7 +335,7 @@ function initial() {
     book = (10000 + bookID).toString();
 
     getScreenSize();
-    document.getElementById("imageid").height = h/2;
+    document.getElementById("imageid").height = h/4;
     document.getElementById("imageid").width = w/2;
 
 
