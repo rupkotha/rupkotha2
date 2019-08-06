@@ -259,7 +259,7 @@ function registration() {
     password = document.getElementById("password").value;
 
     firebase.auth().createUserWithEmailAndPassword(email, password).then(function (user) {
-        window.location.href = 'editor.html'
+        window.location.href = 'index.html'
 
         //Here if you want you can sign in the user
     }).catch(function (error) {
@@ -300,7 +300,7 @@ function login() {
     password = document.getElementById("password").value;
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then(function onSuccess(...args) {
-            window.location.href = 'editor.html'
+            window.location.href = 'index.html'
         }).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
