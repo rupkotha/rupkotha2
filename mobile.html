@@ -5,196 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="resource/css/mobile.css">
-    <link rel="stylesheet" href="resource/css/bootstrap.css">
-    <title>Editor</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="../rupkotha/resource/css/bootstrap.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 
-<body onload="initial()">
-    <header>
-        <p class="logo">Rupkotha</p>
-        <div class="d-flex justify-content-between">
-            <span>
-                <a href="index.html" class="btn btn-outline-primary"><b>Home</b></a>
-                <a href="mailto:rupkotha@protonmail.com" class="btn btn-outline-primary"><b>Request New
-                        Book</b></a></span>
+<body>
+    <div class="bg-image img1"></div>
+    <div class="bg-image img2"></div>
+    <div class="bg-image img3"></div>
+    <div class="bg-image img4"></div>
+    <div class="bg-image img5"></div>
+    <div class="bg-image img6"></div>
 
-            <span>
-            </span>
-            <span>
-                <!-- <a href="editor.html" class="btn btn-danger" id="editor-button">Editor</a> -->
-                <a href="#" class="btn btn-outline-primary" id="profile-button"><b>Profile</b></a>
-                <a href="index.html" class="btn btn-outline-primary" id="logout-button" onclick="logout()"><b>Log
-                        out</b></a>
-
-                <span id="login-header">
-                    <a href="login.html" class="btn btn-outline-primary" id="login-button"><b>Log in</b></a>
-                    <a href="registration.html" class="btn btn-outline-primary" id="registration-button"><b>
-                            Registration</b></a></span>
-            </span>
-
-        </div>
-    </header>
-
-
-
-    <section>
-        <!-- Book Details .... -->
-
-        <aside id="aside-right">
-            <aside id="aside-right">
-                <div class="input-group mb-3 container">
-                    <b class="form-control text-center alert-secondary">Book Details</b>
-                </div>
-                <div class="input-group mb-3 container">
-                    <b class="form-control">Book ID :</b>
-                    <input type="text" value="" class="form-control" id="bookid-table-right" placeholder="Book ID"
-                        readonly>
-                </div>
-
-                <div class="input-group mb-3 container">
-                    <b class="form-control">Book</b>
-                    <input type="text" value="" class="form-control" id="bookname-table" placeholder="Book Name"
-                        readonly>
-                </div>
-
-                <div class="input-group mb-3 container">
-                    <b class="form-control">Writer</b>
-                    <input type="text" value="" class="form-control" id="writer-table" placeholder="Writer" readonly>
-                </div>
-
-                <div class="input-group mb-3 container">
-                    <b class="form-control">Total Pages</b>
-                    <input type="text" value="" class="form-control" id="totalpages-table" placeholder="Total Pages"
-                        readonly>
-                </div>
-
-                <div class="input-group mb-3 container">
-                    <b class="form-control">Formated</b>
-                    <input type="text" value="" class="form-control" id="formatedpages-table" placeholder="Formatted"
-                        readonly>
-                </div>
-
-                <div class="input-group mb-3 container">
-                    <b class="form-control">Proofed</b>
-                    <input type="text" value="" class="form-control" id="proofedpages-table" placeholder="Proofed"
-                        readonly>
-                </div>
-
-                <div class="input-group mb-3 container">
-                    <b class="form-control">Completed</b>
-                    <input type="text" value="" class="form-control" id="completed-table" placeholder="Completed"
-                        readonly>
-                </div>
-            </aside>
-
-            <br><br>
-            <!-- Page Details -->
-            <aside id="aside-left">
-
-                <div class="input-group mb-3 container">
-                    <b class="form-control text-center alert-secondary">Page Details</b>
-                </div>
-                <div class="input-group mb-3 container">
-                    <b class="form-control">Book ID :</b>
-                    <input type="text" value="" class="form-control" id="bookid-table" placeholder="Book ID" readonly>
-                </div>
-
-                <div class="input-group mb-3 container">
-                    <b class="form-control">Page</b>
-                    <input type="text" value="" class="form-control" id="page-table" placeholder="Page" readonly>
-                </div>
-
-                <div class="input-group mb-3 container">
-                    <b class="form-control">Version</b>
-                    <input type="text" value="" class="form-control" id="version-table" placeholder="version" readonly>
-                </div>
-
-                <div class="input-group mb-3 container">
-                    <b class="form-control">Proof</b>
-                    <input type="text" value="" class="form-control" id="proof-table" placeholder="Proof" readonly>
-                </div>
-
-                <div class="input-group mb-3 container">
-                    <b class="form-control">Format</b>
-                    <input type="text" value="" class="form-control" id="format-table" placeholder="Format" readonly>
-                </div>
-
-                <div class="input-group mb-3 container">
-                    <b class="form-control">Volunteer</b>
-                    <input type="text" value="" class="form-control" id="volunteer-table" placeholder="Volunteer"
-                        readonly>
-                </div>
-
-                <div class="input-group mb-3 container">
-                    <b class="form-control">Image </b>
-                    <a href="" class="form-control" id="page-image-table" target="_blank">Link</a>
-                </div>
-            </aside>
-
-            </nav>
-
-    </section>
-
-    <br>
-    <section>
-        <div>
-
-            <b class="form-control">Book ID</b>
-            <input type="number" value="" class="form-control" placeholder="Book ID" id="go-bookid" readonly>
-
-            <b class="form-control">Page</b>
-            <input type="number" value="" class="form-control" placeholder="Page" id="go-page">
-
-            <div class="input-group-append">
-                <button class="btn btn-primary" onclick="goPage()">GO</button>
-            </div>
-        </div>
-        <br><br>
-        <div class="input-group mb-3 col-12 d-flex justify-content-center">
-            <div class="btn-group">
-                <button class="btn btn-secondary" onclick="previousPage()">Previous Page</button>
-                <button class="btn btn-info" onclick="nextPage()">Next Page</button>
-                <button class="btn btn-primary" onclick="incompletedPage()">Next Incompleted Page</button>
-            </div>
-        </div>
-    </section>
-
-
-
-    <main>
-        <textarea name="text" id="textid" cols="50" rows="15" wrap="soft" spellcheck="on"></textarea>
-        <img src="" id="imageid" alt="Page Image"></img>
-    </main>
-
-
-    <footer>
-        <div>
-            <div class="input-group mb-3">
-                <b class="form-control">Version</b>
-                <input type="number" value="" class="form-control" placeholder="Version" id="go-version">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" id="version-button" onclick="goVersion()">GO</button>
-                </div>
-            </div>
-
-            <div>
-                <button type="submit" class="btn btn-primary" onclick="getLatest()">Last Edited</button>
-                <button type="submit" class="btn btn-warning" onclick="getFilter()">Filter Text</button>
-                <button type="submit" class="btn btn-warning" onclick="getRaw()">Raw Text</button>
-                <button type="submit" class="btn btn-danger" onclick="clearTextArea()">Clear</button>
-            </div>
-        </div>
-
-        <br><br><br>
-        <div>
-            <b class="form-check-label"> I did </b>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="proof" id="proof-checkbox"
-                    onclick="checkSubmit()">
-                <label class="form-check-label">Proof</label>
-
-            </div>
+    <div class="bg-text">
+        <textarea name="text" id="textid" cols="80" rows="15" wrap="soft" spellcheck="on">
+            ﻿অনেক পুরনো বাড়ি। একশো বছর হতে পারে, দুশো হলেও অবাক হওয়ার কিছু নেই। কাঠের টাওয়ার, ছড়ানো কার্নিশ। গাড়িবারান্দার ঢেউখেলানো ছাতটা ধরে রেখেছে মোটা মোটা থাম। আর বিশাল সদর দরজা।
+দরজায় ধাক্কা দিলেন রাশেদ পাশা।
+সাড়া দিয়ে বেরোলেন লম্বা, রোগাটে একজন মানুষ। প্রৌঢ়, কিন্তু মনে হয় বয়েস আরও বেশি, বৃদ্ধ। চোখের নিচে গভীর ছাঁয়া। এই জুলাই মাসের গরমেও টুইডের একটা, জ্যাকেট পরে রয়েছেন, কতোকাল ধোয়া হয়নি কে জানে, দোমড়ানো। হাতে বিদেশী ভাষায় লেখা মোটা এক বই।
+‘প্রফেসর হোফার?' জিজ্ঞেস করলেন রাশেদ পাশা। হাসলেন প্রফেসর। আপনি নিশ্চয়ই রাশেদ পাশা? আসুন আসুন বাধা দিয়ে বললেন রাশেদ পাশা, প্রফেসর সাহেব, এ-আমার ভাতিজা। একটু আগে নাকি কালো পোশাক পরা একটা লোককে আপনার জানালা দিয়ে ঢুকতে দেখেছে।'
+‘আমার বাড়িতে?' চোখ মিটমিট করলেন প্রফেসর। নিশ্চয় ভুল করেছে।'
+না, স্যার,' জবাব দিলো কিশোর। আমি শিওর। দামী কোনো জিনিস আছে আপনার বাড়িতে? চোরে চুরি করবে, এমন কিছু?
+নাহ। কিচ্ছু নেই।•••তবু তুমি যখন বলছো...ওহো, বুঝেছি, আমার ছেলে • রিকি। কালো কাউবয় পোশাক আছে তার। আর কতোবার বুঝিয়েছি, জানালা দিয়ে ঢোকার চেয়ে দরজা দিয়ে ঢোকা অনেক ভালো। প্রফেসর হাসলেন।
+. মাথা ঝাঁকালেন রাশেদ পাশা। তাই বলুন।
+‘আপনার ছেলের বয়েস কতো, স্যার? জানতে চাইলো কিশোর।
+কতো আর, এই তোমাদের মতোই। তোমার মতোই লম্বা। ‘আমি যাকে দেখেছি, সে আরও লম্বা।
+'তাই? সংশয় দেখা দিলো প্রফেসরের চোখে। বেশ, এসো, দেখি কোথায় লুকিয়ে আছে তোমার চোর।  বিরাট বাড়িটার নিচতলার ঘরগুলো ঘুরিয়ে দেখালেন প্রফেসর। বেশির ভাগই খালি, বন্ধ করে রাখা হয়েছে। করি ভাষা নিয়ে গবেষণা, বিষন্ন শোনালো তার কণ্ঠ। টাকা নেই। এতো বড় বাড়ি আর রাখার ক্ষমতা নেই আমার। এক মুহূর্ত থেমে বললেন, বাপ-দাদারা ছিলো জাহাজী, ক্যাপ্টেন। ভালো টাকা আয় করতো। কতো যে জিনিস আনতে পুব-দেশ থেকে। তারাই বানিয়েছে এই বাড়ি, টিকিয়ে রেখেছে অনেক দিন। নাবিক হলে হয়তো আমিও পারতাম। হইনি। এখন এখানে থাকি শুধু আমি আর আমার ছেলে। এক চাচাতো ভাই ছিলো আমার, ভলিউম-৭ 
+        </textarea>
+        <div hidden>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="format" id="format-checkbox"
                     onclick="checkSubmit()">
@@ -202,11 +40,7 @@
             </div>
             <button type="submit" class="btn btn-success" id="submit-button" onclick="update()" disabled>UPDATE</button>
         </div>
-    </footer>
-    <br><br><br>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase.js"></script>
-    <script src="resource/javascript/mobile.js"></script>
+    </div>
 </body>
 
 </html>
