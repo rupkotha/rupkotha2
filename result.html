@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="resource/css/bootstrap.css">
+    <link rel="stylesheet" href="resource/css/main.css">
+    <title>Result</title>
+</head>
+
+<body>
+    <div class="input-group mb-3 col-sm-11 d-flex justify-content-center">
+
+        <b class="form-control">Book ID</b>
+        <input type="number" value="10001" class="form-control" placeholder="Book ID" id="result-bookid">
+
+        <b class="form-control">From</b>
+        <input type="tel" value="1" class="form-control" placeholder="Page" id="result-from">
+
+        <b class="form-control">To</b>
+        <input type="tel" value="10" class="form-control" placeholder="Page" id="result-to">
+        <div class="input-group-append">
+            <button class="btn btn-primary" onclick="goResult()">Result</button>
+        </div>
+    </div>
+
+
+    <br><br><br>
+
+
+    <div id="result-text">
+
+    </div>
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase.js"></script>
+<script src="resource/javascript/main.js"></script>
+
+</html>
