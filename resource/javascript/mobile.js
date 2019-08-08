@@ -4,7 +4,7 @@ let bookID, page, pageName, book;
 let title, writer, totalPages, formatedPages, proofedPages, bestVolunteer, completed, taskPages = [], lastPageInTask = 0;
 let rawText, filterText, latestText, imageLink, format, proof, version, volunteer;
 
-let text, newVolunteer = '', email, uid, credit, lastpage,ratio,w,h;
+let text, newVolunteer = '', email, uid, credit, lastpage;
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -21,13 +21,6 @@ firebase.initializeApp(firebaseConfig);
 let db = firebase.database();
 let obj = document.getElementById("textid");
 
-
-function getScreenSize() {
-    ratio = window.devicePixelRatio || 1;
-    w = screen.width * ratio;
-    h = screen.height * ratio;
-}
-getScreenSize();
 function previousPage() {
     page--;
     newPage();
@@ -173,6 +166,7 @@ function getTaskedPageNumber() {
         else
             console.log("All Completed in this book. \nPlease change Book ID");
     }
+    console.log(taskPages)
 }
 
 
@@ -217,6 +211,11 @@ function newPage() {
 
 
         document.getElementById("go-version").value = version;
+
+        var game=document.getElementById("embed-src");
+        var clone=game.cloneNode(true);
+        clone.setAttribute('src',imageLink);
+        game.parentNode.replaceChild(clone,game)
     });
 
     document.getElementById("proof-checkbox").checked = false;
@@ -225,7 +224,7 @@ function newPage() {
 }
 
 function goPage() {
-    page = document.getElementById("go-page").value;
+    page = Number(document.getElementById("go-page").value)
     bookID = Number(document.getElementById("go-bookid").value) - 10000;
     newPage();
 }
@@ -334,13 +333,7 @@ function initial() {
     bookID = 1;
     book = (10000 + bookID).toString();
 
-    getScreenSize();
-    document.getElementById("imageid").height = h/4;
-    document.getElementById("imageid").width = w/2;
 
-
-    document.getElementById("textid").height = h/2;
-    document.getElementById("textid").width = w/2;
     // ref = db.ref("/book/10006/volunteers/ZFEQBIt3FCTgxJt3MhuP7PF23eF2");
     // ref = db.ref("book/" + book + "/volunteers/" + uid);
 
