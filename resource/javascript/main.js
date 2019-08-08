@@ -343,3 +343,34 @@ function initial() {
     newPage();
     getBookDetails();
 }
+
+
+function goResult() {
+    from = Number(document.getElementById("result-from").value)
+    to = Number(document.getElementById("result-to").value)
+    bookID = Number(document.getElementById("result-bookid").value) - 10000;
+
+    book = (10000 + bookID).toString();
+    let s = '<p class = "result-indent">';
+
+    for (i = from; i <= to; i++) {
+        pn = (1000 + Number(i)).toString();
+        ref = db.ref("book/" + book + "/pages/" + pn + "/text");
+        ref.on("value", function (snapsot) {
+            console.log(snapsot.val())
+            lines = snapsot.val().split('\n');
+
+            for (i = 0; i < lines.length; i++) {
+                s = s + lines[i] + '</p>\n<br/>\n  <p class = "result-indent">';
+            }
+        });
+    }
+    setTimeout(function () {
+        s = s + "</p>";
+        console.log(s);
+        document.getElementById("result-text").innerHTML = s;
+
+    }, 3000);
+
+
+}

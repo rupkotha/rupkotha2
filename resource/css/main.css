@@ -37,3 +37,11 @@ section {
 footer {
     margin: 10px;
 }
+
+textarea{
+    font-size: 20px;
+}
+
+.result-indent{
+    text-indent: 2rem;
+}
