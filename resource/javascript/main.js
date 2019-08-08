@@ -351,13 +351,14 @@ function goResult() {
     bookID = Number(document.getElementById("result-bookid").value) - 10000;
 
     book = (10000 + bookID).toString();
-    let s = '<p class = "result-indent">';
+    let s = '<h1> Maximum Ten Pages </h1>'
+    s = s + '<p class = "result-indent">';
 
-    for (i = from; i <= to; i++) {
+    for (i = from,j = i ; i <= to && i < j+10 ; i++) {
         pn = (1000 + Number(i)).toString();
         ref = db.ref("book/" + book + "/pages/" + pn + "/text");
         ref.on("value", function (snapsot) {
-            console.log(snapsot.val())
+            // console.log(snapsot.val())
             lines = snapsot.val().split('\n');
 
             for (i = 0; i < lines.length; i++) {
@@ -367,10 +368,10 @@ function goResult() {
     }
     setTimeout(function () {
         s = s + "</p>";
-        console.log(s);
+        // console.log(s);
         document.getElementById("result-text").innerHTML = s;
 
-    }, 3000);
+    }, 5000);
 
 
 }
